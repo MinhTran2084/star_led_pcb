@@ -1,8 +1,8 @@
-# ⭐️ ESP32 Star Matrix Hardware System
+# ⭐️ ESP32-C3 Star Matrix Hardware System
 
-A custom-shaped, geometric PCB design engineered to drive a 35-LED matrix utilizing an ESP32 microcontroller. This project showcases hardware development capabilities from schematic capture and component selection to high-density surface-mount technology (SMT) routing.
+A custom geometric hardware system designed in Altium Designer featuring a star-shaped PCB that drives 35 surface-mount LEDs. The system utilizes an ESP32-C3 microcontroller and discrete low-side N-channel MOSFET switching arrays to achieve independent multiplexed branch control.
 
-##  3D Design Preview
+## 3D Design Preview
 <p align="center">
   <img src="./design/front_render.png" width="45%" alt="PCB Front View" />
   <img src="./design/back_render.png" width="45%" alt="PCB Back View" />
@@ -11,20 +11,23 @@ A custom-shaped, geometric PCB design engineered to drive a 35-LED matrix utiliz
 
 ---
 
-##  Technical Specifications & Architecture
-* **Core Microcontroller:** ESP32 MCU (selected for high GPIO availability and processing capacity).
-* **Display Integration:** 35 surface-mount LEDs arranged in an optimized geometric star matrix.
-* **EDA Software Platform:** Altium Designer.
-* **Design Implementation:** Integrated decoupling capacitor arrays for high-frequency noise mitigation, custom board boundary geometry definitions, and calculated trace width variations tailored for signal and power rails.
+## Technical Specifications & Circuit Architecture
+
+*   **Core Microcontroller:** ESP32-C3-WROOM-02-N4 (RISC-V single-core architecture with integrated Wi-Fi/BLE).
+*   **LED Array & Driver Matrix:** 35 SMT LEDs arranged into 5 independent branches (7 parallel LEDs per branch) corresponding to the star's geometry. 
+*   **Low-Side Switching Control:** Driven by 5 discrete AO3400A N-channel MOSFETs acting as low-side switches connected directly to ESP32-C3 GPIOs (`IO0` - `IO4`) for efficient power multiplexing.
+*   **Power Management:** Dual-source power architecture (USB Type-C or external battery connector input) protected via SS24T3G Schottky diodes.
+*   **Voltage Regulation:** Integrated AP2112K-3.3V low-dropout (LDO) linear regulator supplying stable `3V3` to the MCU, optimized with standard input/output decoupling capacitor networks.
+*   **System Peripherals:** Built-in hardware RC reset circuit, hardware boot-option selector switch (`IO9`), and compliant $5.1\text{k}\Omega$ configuration channel (CC) pull-down resistors for USB-C power delivery negotiation.
 
 ---
 
-##  Engineering Project Milestones
-- [x] **Schematic Capture:** Completed circuit architecture, logical signal routing, and Electrical Rule Checks (ERC).
-- [x] **PCB Layout & Routing:** Defined custom star geometry, aligned SMT footprints, and achieved 100% trace routing completeness.
+## Engineering Project Milestones
+- [x] **Schematic Capture:** Completed circuit architecture, discrete multiplexing control logic, and Electrical Rule Checks (ERC).
+- [x] **PCB Layout & Routing:** Defined custom star geometry boundary rules, aligned SMT components, and completed 100% trace routing optimization.
 - [x] **Manufacturing Preparation:** Production-ready Gerber data packages and NC Drill files fully generated.
 - [ ] **Hardware Population:** Surface-mount technology component population and reflow soldering pending.
-- [ ] **Firmware Architecture:** Bare-metal C matrix driving algorithms and basic animation sequences to be implemented.
+- [ ] **Firmware Architecture:** Bare-metal C branch-multiplexing and dynamic LED animation algorithms to be implemented.
 
 ---
 
