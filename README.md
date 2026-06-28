@@ -27,7 +27,7 @@ A custom geometric hardware system designed in Altium Designer featuring a star-
 - [x] **PCB Layout & Routing:** Defined custom star geometry boundary rules, aligned SMT components, and completed 100% trace routing optimization.
 - [x] **Manufacturing Preparation:** Production-ready Gerber data packages and NC Drill files fully generated.
 - [ ] **Hardware Population:** Surface-mount technology component population and reflow soldering pending.
-- [ ] **Firmware Architecture:** Bare-metal C branch-multiplexing and dynamic LED animation algorithms to be implemented.
+- [ ] **Firmware Architecture:** Bare-metal branch-multiplexing and dynamic LED animation algorithms to be implemented via the **Arduino IDE** using standard ESP32 board libraries.
 
 ---
 
@@ -41,4 +41,5 @@ A custom geometric hardware system designed in Altium Designer featuring a star-
 
 * **The "Overkill" MCU Selection:** A standard 8-bit microcontroller or a dedicated LED driver IC would easily suffice for a 35-LED multiplexed array. Utilizing the **ESP32-C3** (a 32-bit RISC-V core with Wi-Fi/BLE capability) is admittedly massive overkill for this application.
 * **Why Use It?** As an initial end-to-end hardware development project, the primary engineering goals were **hardware stability, prototyping speed, and building a reliable, well-documented baseline.** The ESP32-C3 platform provides exceptionally robust internal pull-ups/pull-downs, clean logic levels, and a stable development ecosystem that minimizes debugging variables.
+* **Accessible Software Stack:** To match the focus on rapid prototyping, the firmware framework is designed to be fully written and flashed using the **Arduino IDE**, allowing for quick iterations of the multiplexing logic and custom animation sequences.
 * **Optimization vs. Execution:** Silicon optimization was intentionally deprioritized in favor of focusing heavily on mastering Altium geometry layout rules, SMT footprint alignment, and clean schematic categorization. Future iterations will look toward optimizing BOM cost and power consumption by transitioning to low-pin-count microcontrollers.
