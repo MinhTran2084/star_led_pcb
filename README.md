@@ -1,4 +1,4 @@
-# ⭐️ ESP32-C3 Star Matrix Hardware System
+# ESP32-C3 Star Matrix Hardware System
 
 A custom geometric hardware system designed in Altium Designer featuring a star-shaped PCB that drives 35 surface-mount LEDs. The system utilizes an ESP32-C3 microcontroller and discrete low-side N-channel MOSFET switching arrays to achieve independent multiplexed branch control.
 
