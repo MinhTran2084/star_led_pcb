@@ -16,7 +16,7 @@ A custom geometric hardware system designed in Altium Designer featuring a star-
 *   **Core Microcontroller:** ESP32-C3-WROOM-02-N4 (RISC-V single-core architecture with integrated Wi-Fi/BLE).
 *   **LED Array & Driver Matrix:** 35 SMT LEDs arranged into 5 independent branches (7 parallel LEDs per branch) corresponding to the star's geometry. 
 *   **Low-Side Switching Control:** Driven by 5 discrete AO3400A N-channel MOSFETs acting as low-side switches connected directly to ESP32-C3 GPIOs (`IO0` - `IO4`) for efficient power multiplexing.
-*   **Power Management:** Dual-source power architecture (USB Type-C or external battery connector input) protected via SS24T3G Schottky diodes.
+*   **Power Management:** Dual-source power architecture driven by a single 14500 3.7V Lithium-ion battery pack as the primary power source, with an onboard USB Type-C interface serving as an alternative power input. Both rails are isolated and protected via SS24T3G Schottky diodes.
 *   **Voltage Regulation:** Integrated AP2112K-3.3V low-dropout (LDO) linear regulator supplying stable `3V3` to the MCU, optimized with standard input/output decoupling capacitor networks.
 *   **System Peripherals:** Built-in hardware RC reset circuit, hardware boot-option selector switch (`IO9`), and compliant $5.1\text{k}\Omega$ configuration channel (CC) pull-down resistors for USB-C power delivery negotiation.
 
