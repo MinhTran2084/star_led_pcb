@@ -31,6 +31,14 @@ A custom geometric hardware system designed in Altium Designer featuring a star-
 
 ---
 
-## 📂 Repository Layout
+## Repository Layout
 * `/design`: Source design files, including Altium schematic (`.SchDoc`) and layout (`.PcbDoc`).
 * `/manufacturing`: Complete production-ready manufacturing packages.
+
+---
+
+## Design Reflections & Component Trade-offs
+
+* **The "Overkill" MCU Selection:** A standard 8-bit microcontroller or a dedicated LED driver IC would easily suffice for a 35-LED multiplexed array. Utilizing the **ESP32-C3** (a 32-bit RISC-V core with Wi-Fi/BLE capability) is admittedly massive overkill for this application.
+* **Why Use It?** As an initial end-to-end hardware development project, the primary engineering goals were **hardware stability, prototyping speed, and building a reliable, well-documented baseline.** The ESP32-C3 platform provides exceptionally robust internal pull-ups/pull-downs, clean logic levels, and a stable development ecosystem that minimizes debugging variables.
+* **Optimization vs. Execution:** Silicon optimization was intentionally deprioritized in favor of focusing heavily on mastering Altium geometry layout rules, SMT footprint alignment, and clean schematic categorization. Future iterations will look toward optimizing BOM cost and power consumption by transitioning to low-pin-count microcontrollers.
